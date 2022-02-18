@@ -6,30 +6,24 @@ namespace WorkingWithNullable.GameConsole
     {
         static void Main(string[] args)
         {
-            PlayerCharacter[] players = new PlayerCharacter[] {
-            new PlayerCharacter{Name="Olonyl"},
-            new PlayerCharacter(),
-            null
+            PlayerCharacter sarah = new PlayerCharacter(new DiamonSkinDefene())
+            {
+                Name = "Sarah"
             };
 
+            PlayerCharacter amrit = new PlayerCharacter(new IronBonesDefence())
+            {
+                Name = "Amrit"
+            };
 
-            string p1 = players?[0]?.Name;
-            string p2 = players?[1]?.Name;
-            string p3 = players?[2]?.Name;
+            PlayerCharacter gentry = new PlayerCharacter(new NullDefence())
+            {
+                Name = "Gentry"
+            };
 
-
-            PlayerCharacter[] players2 = null;
-
-
-            string p21 = players2?[0]?.Name;
-            string p22 = players2?[1]?.Name;
-            string p23 = players2?[2]?.Name;
-
-
-            //Null Conditional Operator + Null Coalescing Operator
-            PlayerCharacter player = null;
-            int days = player?.DaysSinceLastLogin ?? -1;
-            Console.WriteLine(days);
+            sarah.Hit(10);
+            amrit.Hit(10);
+            gentry.Hit(10);
 
             Console.ReadLine();
 
