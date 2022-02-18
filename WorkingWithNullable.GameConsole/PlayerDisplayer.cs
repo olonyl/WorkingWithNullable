@@ -15,14 +15,25 @@ namespace WorkingWithNullable.GameConsole
                 Console.WriteLine(player.Name);
             }
 
-            if (player.DaysSinceLastLogin.HasValue)
-            {
-                Console.WriteLine(player.DaysSinceLastLogin.Value);
-            }
-            else
-            {
-                Console.WriteLine("No value for DaySinceLastLogin");
-            }
+            //int days = player.DaysSinceLastLogin.GetValueOrDefault(-1);
+
+            //Using Conditional Operator
+            //int days = player.DaysSinceLastLogin.HasValue ? player.DaysSinceLastLogin.Value : -1;
+
+            //Using Null Coalescing Operator
+            int days = player.DaysSinceLastLogin ?? -1;
+
+            Console.WriteLine($"{days} since last login");
+
+
+            //if (player.DaysSinceLastLogin.HasValue)
+            //{
+            //    Console.WriteLine(player.DaysSinceLastLogin.Value);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No value for DaySinceLastLogin");
+            //}
 
             if (player.DateOfBirth.HasValue)
             {

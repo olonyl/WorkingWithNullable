@@ -6,13 +6,15 @@ namespace WorkingWithNullable.GameConsole
     {
         static void Main(string[] args)
         {
-            var player = new PlayerCharacter();
+            PlayerCharacter player = new PlayerCharacter();
 
-            //player.Name = " ";
             player.DaysSinceLastLogin = 42;
-            //player.DateOfBirth = DateTime.Now;
 
-            PlayerDisplayer.Write(player);
+
+            //Null Conditional Operator + Null Coalescing Operator
+            int days = player?.DaysSinceLastLogin ?? -1;
+
+            Console.WriteLine(days);
 
             Console.ReadLine();
 
