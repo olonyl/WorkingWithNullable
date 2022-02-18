@@ -8,9 +8,9 @@ namespace WorkingWithNullable.GameConsole
         {
             var player = new PlayerCharacter();
 
-            player.Name = "Olonyl";
+            //player.Name = " ";
             player.DaysSinceLastLogin = 42;
-            player.DateOfBirth = DateTime.Now;
+            //player.DateOfBirth = DateTime.Now;
 
             PlayerDisplayer.Write(player);
 

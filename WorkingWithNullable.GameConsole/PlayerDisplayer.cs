@@ -6,24 +6,43 @@ namespace WorkingWithNullable.GameConsole
     {
         public static void Write(PlayerCharacter player)
         {
-            Console.WriteLine(player.Name);
+            if (string.IsNullOrWhiteSpace(player.Name))
+            {
+                Console.WriteLine("Player name is null or all whitespaces");
+            }
+            else
+            {
+                Console.WriteLine(player.Name);
+            }
 
-            if (player.DaysSinceLastLogin == -1)
+            if (player.DaysSinceLastLogin.HasValue)
+            {
+                Console.WriteLine(player.DaysSinceLastLogin.Value);
+            }
+            else
             {
                 Console.WriteLine("No value for DaySinceLastLogin");
             }
-            else
-            {
-                Console.WriteLine(player.DaysSinceLastLogin);
-            }
 
-            if (player.DateOfBirth == DateTime.MinValue)
+            if (player.DateOfBirth.HasValue)
+            {
+                Console.WriteLine(player.DateOfBirth);
+            }
+            else
             {
                 Console.WriteLine("No value for DateOfBirth");
             }
+            if (player.IsNoob == null)
+            {
+                Console.Write("Player newbie status is unknown");
+            }
+            else if (player.IsNoob == true)
+            {
+                Console.WriteLine("Player is newbie");
+            }
             else
             {
-                Console.WriteLine(player.DateOfBirth);
+                Console.WriteLine("Player is experienced");
             }
         }
     }
