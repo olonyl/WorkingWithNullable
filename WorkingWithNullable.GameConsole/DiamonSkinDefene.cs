@@ -1,8 +1,8 @@
 ﻿namespace WorkingWithNullable.GameConsole
 {
-    public class DiamonSkinDefene : ISpecialDefence
+    public class DiamonSkinDefene : SpecialDefence
     {
-        public int CalculateDamageReduction(int totalDamage)
+        public override int CalculateDamageReduction(int totalDamage)
         {
             return 1;
         }
